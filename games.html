@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games — Cyberillc's Decomp World</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="brand">Cyberillc's Decomp World</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="games.html" class="active">Games</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h1>Games</h1>
+      <p>Decompiled Unity game projects — source code and assets.</p>
+    </div>
+
+    <div class="game-grid">
+      <div class="game-card">
+        <div class="game-card-thumb">
+          <img src="assets/sonic-dash-thumb.jpg" alt="Sonic Dash screenshot" />
+        </div>
+        <div class="game-card-body">
+          <h3>Sonic Dash</h3>
+          <p>Decompiled version of Sonic Dash 1.16.1 — the classic endless runner by SEGA.</p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <span class="tag">Unity</span>
+          </div>
+          <label for="sonic-dash-version" style="font-size:0.75rem; color:#aaa; display:block; margin-bottom:0.3rem;">Version</label>
+          <select id="sonic-dash-version" class="version-select">
+            <option value="https://sonic-dash-1-16-1.vercel.app/">v1.16.1</option>
+          </select>
+          <a href="https://sonic-dash-1-16-1.vercel.app/" target="_blank" rel="noopener" class="btn" id="sonic-dash-link" style="margin-top:0.75rem;">Play / View →</a>
+          <script>
+            (function () {
+              var sel = document.getElementById('sonic-dash-version');
+              var link = document.getElementById('sonic-dash-link');
+              sel.addEventListener('change', function () {
+                link.href = sel.value;
+              });
+            })();
+          </script>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Cyberillc's Decomp World &mdash; <a href="about.html">About</a></p>
+  </footer>
+
+</body>
+</html>
