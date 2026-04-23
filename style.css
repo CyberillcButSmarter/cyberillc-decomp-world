@@ -234,6 +234,86 @@ main {
   border-color: #777;
 }
 
+/* ── CARD TABS ── */
+.card-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #333;
+  margin-bottom: 0.75rem;
+}
+
+.card-tab {
+  padding: 0.3rem 0.75rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #888;
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+
+.card-tab.active {
+  color: #7ec8e3;
+  border-bottom-color: #7ec8e3;
+}
+
+.card-tab:hover {
+  color: #ddd;
+}
+
+.card-tab-panel {
+  display: none;
+}
+
+.card-tab-panel.active {
+  display: block;
+}
+
+/* ── DOWNLOAD LIST ── */
+.dl-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.dl-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0.6rem;
+  background: #222;
+  border: 1px solid #333;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #ddd;
+}
+
+a.dl-row:hover {
+  border-color: #555;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+a.dl-row .dl-action {
+  color: #7ec8e3;
+}
+
+a.dl-row:hover .dl-action {
+  color: #fff;
+}
+
+.dl-disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.dl-platform {
+  font-weight: bold;
+  color: inherit;
+}
+
 /* ── NEWS ── */
 .news-list {
   display: flex;

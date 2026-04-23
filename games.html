@@ -21,34 +21,42 @@
   <main>
     <div class="page-header">
       <h1>Games</h1>
-      <p>Decompiled Unity game projects — source code and assets.</p>
+      <p>Decompiled Unity game projects, source code and assets</p>
     </div>
 
     <div class="game-grid">
       <div class="game-card">
-        <div class="game-card-thumb">
-          <img src="assets/sonic-dash-thumb.jpg" alt="Sonic Dash screenshot" />
-        </div>
+        <div class="game-card-thumb" style="background:#1e1e2e; font-size:2rem;">📱</div>
         <div class="game-card-body">
-          <h3>Sonic Dash</h3>
-          <p>Decompiled version of Sonic Dash 1.16.1 — the classic endless runner by SEGA.</p>
-          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+          <h3>ABUP Plus</h3>
+          <p>A decompiled version of ABUP Plus.</p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem;">
             <span class="tag">Unity</span>
           </div>
-          <label for="sonic-dash-version" style="font-size:0.75rem; color:#aaa; display:block; margin-bottom:0.3rem;">Version</label>
-          <select id="sonic-dash-version" class="version-select">
-            <option value="https://sonic-dash-1-16-1.vercel.app/">v1.16.1</option>
-          </select>
-          <a href="https://sonic-dash-1-16-1.vercel.app/" target="_blank" rel="noopener" class="btn" id="sonic-dash-link" style="margin-top:0.75rem;">Play / View →</a>
-          <script>
-            (function () {
-              var sel = document.getElementById('sonic-dash-version');
-              var link = document.getElementById('sonic-dash-link');
-              sel.addEventListener('change', function () {
-                link.href = sel.value;
-              });
-            })();
-          </script>
+          <div class="card-tabs">
+            <button class="card-tab active" data-tab="abup-downloads">Downloads</button>
+          </div>
+          <div class="card-tab-panel active" id="abup-downloads">
+            <p style="font-size:0.7rem; color:#666; margin-bottom:0.6rem;">v1.0.4</p>
+            <div class="dl-list">
+              <a href="assets/dwn/ABUPPlus/104/Windows/ABUP Plus (Windows) (1.0.4) (x86_64).zip" class="dl-row" download>
+                <span class="dl-platform">Windows</span>
+                <span class="dl-action">Download →</span>
+              </a>
+              <a href="assets/dwn/ABUPPlus/104/MacOS/ABUP Plus (MacOS) (1.0.4) (Intel).zip" class="dl-row" download>
+                <span class="dl-platform">macOS <span style="font-size:0.7rem;color:#666;">(Intel)</span></span>
+                <span class="dl-action">Download →</span>
+              </a>
+              <a href="assets/dwn/ABUPPlus/104/Linux/ABUP Plus (Linux).zip" class="dl-row" download>
+                <span class="dl-platform">Linux</span>
+                <span class="dl-action">Download →</span>
+              </a>
+              <a href="assets/dwn/ABUPPlus/104/Android/ABUP Plus (Release 1.0.4) (Mono) (ARMv7).apk" class="dl-row" download>
+                <span class="dl-platform">Android <span style="font-size:0.7rem;color:#666;">(ARMv7)</span></span>
+                <span class="dl-action">Download →</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
