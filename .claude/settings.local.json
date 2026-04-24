@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git lfs *)",
+      "Bash(git -C \"/Users/jasonokine/Github/Cyberillc's Decomp World\" ls-files --others --exclude-standard)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(gh release *)",
+      "Bash(git config *)",
+      "Bash(lsof -n -P -i4TCP:10011)",
+      "Bash(git push *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(ssh -T git@github.com)"
+    ]
+  }
+}
