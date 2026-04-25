@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Games — Cyberillc's Decomp World</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Cyberillc's Decomp World" />
+  <meta property="og:title" content="Games — Cyberillc's Decomp World" />
+  <meta property="og:description" content="Browse decompiled Unity game projects with downloads for Windows, macOS, Linux, and Android." />
+  <meta property="og:url" content="https://cyberillcbutsmarter.github.io/cyberillc-decomp-world/games.html" />
+  <meta property="og:image" content="https://cyberillcbutsmarter.github.io/cyberillc-decomp-world/assets/img/ABUPPlus/screenshot.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -26,13 +32,17 @@
 
     <div class="game-grid">
       <div class="game-card">
-        <div class="game-card-thumb"><img src="assets/img/ABUPPlus/screenshot.png" alt="ABUP Plus screenshot" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
-        <div class="game-card-body">
-          <h3>ABUP Plus</h3>
-          <p>A mod of ABUP which improves the game and adds cool new stuff!</p>
-          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem;">
-            <span class="tag">Unity</span>
+        <a href="abup-plus.html" class="game-card-link">
+          <div class="game-card-thumb"><img src="assets/img/ABUPPlus/screenshot.png" alt="ABUP Plus screenshot"></div>
+          <div class="game-card-body" style="padding-bottom:0.25rem;">
+            <h3>ABUP Plus</h3>
+            <p>A mod of ABUP which improves the game and adds cool new stuff!</p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0;">
+              <span class="tag">Unity</span>
+            </div>
           </div>
+        </a>
+        <div class="game-card-body" style="padding-top:0.75rem; border-top:1px solid #222;">
           <div class="card-tabs">
             <button class="card-tab active" data-tab="abup-downloads">Downloads</button>
             <button class="card-tab" data-tab="abup-archive">Older Versions</button>
