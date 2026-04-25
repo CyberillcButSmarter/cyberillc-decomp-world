@@ -166,7 +166,6 @@
     function goTo(n) {
       current = (n + imgs.length) % imgs.length;
       track.style.transform = `translateX(-${current * 100}%)`;
-      track.style.transition = 'transform 0.25s ease';
       dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) =>
         d.classList.toggle('active', i === current)
       );

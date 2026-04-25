@@ -391,24 +391,25 @@ footer {
 /* ── SCREENSHOT CAROUSEL ── */
 .carousel {
   position: relative;
-  max-width: 560px;
+  max-width: 100%;
   margin-bottom: 1.5rem;
   border: 1px solid #333;
   background: #111;
   user-select: none;
+  overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
-  overflow: hidden;
+  transition: transform 0.35s ease;
 }
 
 .carousel-track img {
+  min-width: 100%;
   width: 100%;
-  flex-shrink: 0;
-  display: block;
-  height: auto;
+  height: 300px;
   object-fit: contain;
+  display: block;
 }
 
 .carousel-btn {
@@ -502,6 +503,10 @@ footer {
   gap: 0.5rem;
   margin-bottom: 0.75rem;
   flex-wrap: wrap;
+}
+
+.game-detail-meta .tag {
+  margin-bottom: 0;
 }
 
 .version-badge {
