@@ -29,8 +29,16 @@
       <a href="games.html">Games</a> / ABUP Plus
     </div>
 
-    <div class="game-detail-hero">
-      <img src="assets/img/ABUPPlus/screenshot.png" alt="ABUP Plus screenshot" />
+    <div class="carousel" id="carousel">
+      <div class="carousel-track" id="carousel-track">
+        <img src="assets/img/ABUPPlus/screenshot.png" alt="ABUP Plus screenshot 1" />
+        <img src="assets/img/ABUPPlus/gameshots1.png" alt="ABUP Plus screenshot 2" />
+        <img src="assets/img/ABUPPlus/gameshots2.png" alt="ABUP Plus screenshot 3" />
+        <img src="assets/img/ABUPPlus/gameshots3.png" alt="ABUP Plus screenshot 4" />
+      </div>
+      <button class="carousel-btn prev" id="carousel-prev">&#8249;</button>
+      <button class="carousel-btn next" id="carousel-next">&#8250;</button>
+      <div class="carousel-dots" id="carousel-dots"></div>
     </div>
 
     <div class="game-detail-info">
@@ -131,6 +139,7 @@
   </footer>
 
   <script>
+    // Tabs
     document.querySelectorAll('.card-tab').forEach(btn => {
       btn.addEventListener('click', () => {
         const section = btn.closest('.game-detail-section');
@@ -140,6 +149,31 @@
         section.querySelector('#' + btn.dataset.tab).classList.add('active');
       });
     });
+
+    // Carousel
+    const track = document.getElementById('carousel-track');
+    const imgs = track.querySelectorAll('img');
+    const dotsContainer = document.getElementById('carousel-dots');
+    let current = 0;
+
+    imgs.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(n) {
+      current = (n + imgs.length) % imgs.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      track.style.transition = 'transform 0.25s ease';
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current)
+      );
+    }
+
+    document.getElementById('carousel-prev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('carousel-next').addEventListener('click', () => goTo(current + 1));
   </script>
 </body>
 </html>

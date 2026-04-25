@@ -388,8 +388,73 @@ footer {
   opacity: 0.85;
 }
 
-.game-card-link:hover h3 {
-  color: #7ec8e3;
+/* ── SCREENSHOT CAROUSEL ── */
+.carousel {
+  position: relative;
+  max-width: 560px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #333;
+  background: #111;
+  user-select: none;
+}
+
+.carousel-track {
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-track img {
+  width: 100%;
+  flex-shrink: 0;
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.55);
+  border: 1px solid #444;
+  color: #ddd;
+  font-size: 1.1rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+}
+
+.carousel-btn.prev { left: 0.4rem; }
+.carousel-btn.next { right: 0.4rem; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0 0.4rem;
+}
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #444;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  background: #7ec8e3;
 }
 
 /* ── GAME DETAIL PAGE ── */
@@ -409,17 +474,15 @@ footer {
 }
 
 .game-detail-hero {
-  width: 100%;
-  max-height: 380px;
-  overflow: hidden;
+  display: inline-block;
+  max-width: 360px;
   border: 1px solid #333;
   margin-bottom: 1.5rem;
 }
 
 .game-detail-hero img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
