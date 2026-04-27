@@ -312,6 +312,18 @@ a.dl-row:hover .dl-action {
 .dl-platform {
   font-weight: bold;
   color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.os-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.75;
+  flex-shrink: 0;
 }
 
 /* ── NEWS ── */
