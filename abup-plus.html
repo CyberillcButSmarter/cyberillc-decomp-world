@@ -45,7 +45,7 @@
       <h1>ABUP Plus</h1>
       <div class="game-detail-meta">
         <span class="tag">Unity</span>
-        <span class="version-badge">v1.0.7</span>
+        <span class="version-badge">v1.0.8</span>
       </div>
       <p class="game-detail-desc">A mod of ABUP which improves the game and adds cool new stuff!</p>
     </div>
@@ -53,11 +53,37 @@
     <div class="game-detail-section">
       <h2>Downloads</h2>
       <div class="card-tabs">
-        <button class="card-tab active" data-tab="dl-latest">Latest (v1.0.7)</button>
+        <button class="card-tab active" data-tab="dl-latest">Latest (v1.0.8)</button>
         <button class="card-tab" data-tab="dl-archive">Older Versions</button>
       </div>
 
       <div class="card-tab-panel active" id="dl-latest">
+        <div class="dl-list">
+          <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.0.8/ABUPPlus.1.0.8.Windows.x86_64.zip" class="dl-row">
+            <span class="dl-platform"><img src="assets/img/icons/windows.png" class="os-icon" alt="Windows"> Windows <span style="font-size:0.7rem;color:#666;">(x86_64)</span></span>
+            <span class="dl-action">Download →</span>
+          </a>
+          <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.0.8/ABUPPlus.1.0.8.MacOS.Intel.zip" class="dl-row">
+            <span class="dl-platform"><img src="assets/img/icons/apple-logo.png" class="os-icon" alt="macOS"> macOS <span style="font-size:0.7rem;color:#666;">(Intel)</span></span>
+            <span class="dl-action">Download →</span>
+          </a>
+          <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.0.8/ABUPPlus.1.0.8.Linux.Universal.zip" class="dl-row">
+            <span class="dl-platform"><img src="assets/img/icons/linux.png" class="os-icon" alt="Linux"> Linux <span style="font-size:0.7rem;color:#666;">(Universal)</span></span>
+            <span class="dl-action">Download →</span>
+          </a>
+          <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.0.8/ABUP.Plus.Release.1.0.8.Mono.ARMv7.apk" class="dl-row">
+            <span class="dl-platform"><img src="assets/img/icons/android.png" class="os-icon" alt="Android"><span class="dl-platform-label">Android<span>(Mono) (ARMv7)</span></span></span>
+            <span class="dl-action">Download →</span>
+          </a>
+          <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.0.8/ABUP.Plus.Release.1.0.8.Il2cpp.ARMv7+ARM64.apk" class="dl-row">
+            <span class="dl-platform"><img src="assets/img/icons/android.png" class="os-icon" alt="Android"><span class="dl-platform-label">Android<span>(Il2cpp) (ARMv7+ARM64)</span></span></span>
+            <span class="dl-action">Download →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="card-tab-panel" id="dl-archive">
+        <p style="font-size:0.75rem; color:#666; margin-bottom:0.6rem;">v1.0.7</p>
         <div class="dl-list">
           <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.0.7/ABUP.Plus.1.0.7.Windows.x86_64.zip" class="dl-row">
             <span class="dl-platform"><img src="assets/img/icons/windows.png" class="os-icon" alt="Windows"> Windows <span style="font-size:0.7rem;color:#666;">(x86_64)</span></span>
@@ -80,10 +106,7 @@
             <span class="dl-action">Download →</span>
           </a>
         </div>
-      </div>
-
-      <div class="card-tab-panel" id="dl-archive">
-        <p style="font-size:0.75rem; color:#666; margin-bottom:0.6rem;">v1.0.6</p>
+        <p style="font-size:0.75rem; color:#666; margin:1rem 0 0.6rem;">v1.0.6</p>
         <div class="dl-list">
           <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.0.6/ABUPPlus-Windows-1.0.6-x86_64.zip" class="dl-row">
             <span class="dl-platform"><img src="assets/img/icons/windows.png" class="os-icon" alt="Windows"> Windows <span style="font-size:0.7rem;color:#666;">(x86_64)</span></span>
@@ -153,6 +176,19 @@
 
     <div class="game-detail-section">
       <h2>Changelog</h2>
+
+      <div class="changelog-entry">
+        <div class="changelog-version">v1.0.8</div>
+        <div class="changelog-date">April 28, 2026</div>
+        <ul>
+          <li><strong>First "actual" patch.</strong></li>
+          <li><strong>Fixed the life countdown</strong> getting stuck at 30:00 by correcting the life timer timestamp handling and making the countdown update reliably in menus/popups.</li>
+          <li><strong>Fixed Terrence</strong> being too bouncy since his velocity during his 1.75 "smash" ability was too fast.</li>
+          <li><strong>Balanced the arena</strong> and bird levels.</li>
+          <li><strong>Added 4 new tips</strong> by Giovanni (@giovanni_ab) on Discord (Thanks!) and 11 new tips by me.</li>
+          <li><strong>New tips include:</strong> "Chuck is fast than Usain Bolt", "Bomb explodes", "Terence and Red are brothers", and "Did you know Bomb can explode like a pig?" (changed to "chili pig").</li>
+        </ul>
+      </div>
 
       <div class="changelog-entry">
         <div class="changelog-version">v1.0.7</div>
