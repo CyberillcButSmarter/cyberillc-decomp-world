@@ -298,6 +298,9 @@ a.dl-row:hover {
 
 a.dl-row .dl-action {
   color: #7ec8e3;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
 }
 
 a.dl-row:hover .dl-action {
@@ -315,6 +318,8 @@ a.dl-row:hover .dl-action {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .os-icon {
