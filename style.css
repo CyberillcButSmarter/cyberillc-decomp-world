@@ -320,6 +320,7 @@ a.dl-row:hover .dl-action {
   gap: 0.4rem;
   min-width: 0;
   flex-shrink: 1;
+  white-space: nowrap;
 }
 
 .os-icon {
