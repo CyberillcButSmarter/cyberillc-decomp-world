@@ -11,6 +11,16 @@
   <meta property="og:url" content="https://cyberillcbutsmarter.github.io/cyberillc-decomp-world/news.html" />
   <meta property="og:image" content="https://cyberillcbutsmarter.github.io/cyberillc-decomp-world/assets/img/ABUPPlus/screenshot.png" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .ra-news-heading {
+      font-size: 1rem; color: #fff; margin: 0 0 0.8rem;
+      padding-bottom: 0.4rem; border-bottom: 1px solid #222;
+    }
+    .ra-news-body { white-space: pre-wrap; }
+    .ra-news-source { font-size: 0.7rem; color: #666; margin-top: 0.4rem; }
+    .ra-news-source a { color: #7ec8e3; }
+    #ra-news-section { margin-bottom: 2rem; }
+  </style>
 </head>
 <body>
 
@@ -44,6 +54,24 @@
         </div>
       </div>
     -->
+
+    <!--
+      Mirrored from Re-Achieve.
+
+      News is written once in the Re-Achieve admin panel and read from its
+      public API here, so the two sites cannot drift. Nothing is copied by hand.
+
+      Deliberately kept as its own list rather than merged into the one below:
+      merging by date would mean parsing dates back out of hand-written <time>
+      text, which breaks the first time somebody writes a date differently.
+
+      The section stays hidden unless the API returns something, so an outage, a
+      blocked request or an empty feed leaves this page exactly as it was.
+    -->
+    <div id="ra-news-section" hidden>
+      <h2 class="ra-news-heading">Re-Achieve &amp; AB2 Plus Legacy</h2>
+      <div class="news-list" id="ra-news-list"></div>
+    </div>
 
     <div class="news-list">
 
@@ -185,6 +213,87 @@
   <footer>
     <p>Cyberillc's Decomp World &mdash; <a href="about.html">About</a></p>
   </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // Override in a console or another page if you ever need to point this at
+      // a different deployment.
+      var API = window.RA_NEWS_API || 'https://re-achieve.vercel.app/v1/news';
+
+      var TYPE_LABELS = {
+        update: 'Update', announcement: 'Announcement', hotfix: 'Hotfix',
+        event: 'Event', content: 'Content'
+      };
+
+      var section = document.getElementById('ra-news-section');
+      var list    = document.getElementById('ra-news-list');
+      if (!section || !list) return;
+
+      function el(tag, cls) {
+        var e = document.createElement(tag);
+        if (cls) e.className = cls;
+        return e;
+      }
+
+      function formatDate(iso) {
+        var d = new Date(iso);
+        if (isNaN(d.getTime())) return '';
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      }
+
+      function render(items) {
+        items.forEach(function (item) {
+          var wrap = el('div', 'news-item');
+
+          var meta = el('div', 'news-meta');
+          var time = el('time');
+          time.textContent = formatDate(item.created_at);
+          meta.appendChild(time);
+          var tag = el('span', 'tag');
+          tag.textContent = TYPE_LABELS[item.type] || item.type || 'Update';
+          meta.appendChild(tag);
+          wrap.appendChild(meta);
+
+          var h3 = el('h3');
+          // textContent throughout: this is admin-written text arriving from
+          // another origin, and innerHTML here would make a typo in the news
+          // editor into script running on this site.
+          h3.textContent = item.title || '';
+          wrap.appendChild(h3);
+
+          var body = el('p', 'ra-news-body');
+          body.textContent = item.body || '';
+          wrap.appendChild(body);
+
+          list.appendChild(wrap);
+        });
+
+        var src = el('p', 'ra-news-source');
+        src.appendChild(document.createTextNode('Posted on '));
+        var a = el('a');
+        a.href = 'https://re-achieve.vercel.app/news.html';
+        a.textContent = 'Re-Achieve';
+        src.appendChild(a);
+        src.appendChild(document.createTextNode('.'));
+        list.appendChild(src);
+
+        section.removeAttribute('hidden');
+      }
+
+      fetch(API)
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (items) {
+          if (!items || !items.length) return;   // nothing to show, stay hidden
+          render(items);
+        })
+        .catch(function () {
+          // Offline, blocked, or the API is down. The page still has its own
+          // news, so failing quietly is better than an error box.
+        });
+    })();
+  </script>
 
 </body>
 </html>
