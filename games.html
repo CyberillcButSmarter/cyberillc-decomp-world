@@ -10,7 +10,7 @@
   <meta property="og:description" content="Browse decompiled Unity game projects with downloads for Windows, macOS, Linux, and Android." />
   <meta property="og:url" content="https://cyberillcbutsmarter.github.io/cyberillc-decomp-world/games.html" />
   <meta property="og:image" content="https://cyberillcbutsmarter.github.io/cyberillc-decomp-world/assets/img/ABUPPlus/screenshot.png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260918" />
 </head>
 <body>
 
@@ -108,7 +108,7 @@
               <span class="dl-more-text">Show 7 older releases</span>
               <span class="dl-more-chevron" aria-hidden="true">&#9662;</span>
             </button>
-            <div class="dl-archive-rest is-collapsed" id="abup-archive-rest">
+            <div class="dl-archive-rest" id="abup-archive-rest" hidden>
 <p style="font-size:0.7rem; color:#666; margin-bottom:0.6rem;">v1.1.0</p>
             <div class="dl-list">
               <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.1.0/ABUP.Plus.1.1.0.Windows.x86_64.zip" class="dl-row">
@@ -309,13 +309,17 @@
 
   <script>
 
-    // Older releases: collapsed until asked for. The button carries its own state through
-    // aria-expanded, so the chevron, the label and assistive tech never disagree.
+    // Older releases: collapsed until asked for.
+    //
+    // The `hidden` attribute does the hiding, not a class of ours: the browser styles it, so a
+    // stale or missing stylesheet cannot leave the whole archive expanded. The button carries its
+    // own state through aria-expanded, so the chevron, the label and assistive tech never disagree.
     document.querySelectorAll('.dl-more').forEach(btn => {
       btn.addEventListener('click', () => {
         const group = document.getElementById(btn.getAttribute('aria-controls'));
         if (!group) return;
-        const open = group.classList.toggle('is-collapsed') === false;
+        const open = group.hidden;
+        group.hidden = !open;
         btn.setAttribute('aria-expanded', String(open));
         const label = btn.querySelector('.dl-more-text');
         if (label) label.textContent = label.textContent.replace(open ? 'Show' : 'Hide', open ? 'Hide' : 'Show');
