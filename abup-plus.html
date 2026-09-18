@@ -45,7 +45,7 @@
       <h1>ABUP Plus</h1>
       <div class="game-detail-meta">
         <span class="tag">Unity</span>
-        <span class="version-badge">v1.1.2.1</span>
+        <span class="version-badge">v1.1.3</span>
       </div>
       <p class="game-detail-desc">A mod of ABUP which improves the game and adds cool new stuff!</p>
     </div>
@@ -53,12 +53,46 @@
     <div class="game-detail-section">
       <h2>Downloads</h2>
       <div class="card-tabs">
-        <button class="card-tab active" data-tab="dl-latest">Latest (v1.1.2.1)</button>
+        <button class="card-tab active" data-tab="dl-latest">Latest (v1.1.3)</button>
         <button class="card-tab" data-tab="dl-archive">Older Versions</button>
       </div>
 
       <div class="card-tab-panel active" id="dl-latest">
   <div class="dl-list">
+    <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.1.3/ABUP.Plus.1.1.3.Windows.x86_64.zip" class="dl-row">
+      <span class="dl-platform"><img src="assets/img/icons/windows.png" class="os-icon" alt="Windows"> Windows <span style="font-size:0.7rem;color:#666;">(x86_64)</span></span>
+      <span class="dl-action">Download →</span>
+    </a>
+    <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.1.3/ABUP.Plus.1.1.3.MacOS.Intel.zip" class="dl-row">
+      <span class="dl-platform"><img src="assets/img/icons/apple-logo.png" class="os-icon" alt="macOS"> macOS <span style="font-size:0.7rem;color:#666;">(Intel)</span></span>
+      <span class="dl-action">Download →</span>
+    </a>
+    <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.1.3/ABUP.Plus.1.1.3.Linux.Universal.zip" class="dl-row">
+      <span class="dl-platform"><img src="assets/img/icons/linux.png" class="os-icon" alt="Linux"> Linux <span style="font-size:0.7rem;color:#666;">(Universal)</span></span>
+      <span class="dl-action">Download →</span>
+    </a>
+    <span class="dl-row" style="opacity:0.55;cursor:default">
+      <span class="dl-platform"><img src="assets/img/icons/android.png" class="os-icon" alt="Android"><span class="dl-platform-label">Android<span>(Mono) (ARMv7)</span></span></span>
+      <span class="dl-action" style="color:#666">Building…</span>
+    </span>
+    <span class="dl-row" style="opacity:0.55;cursor:default">
+      <span class="dl-platform"><img src="assets/img/icons/android.png" class="os-icon" alt="Android"><span class="dl-platform-label">Android<span>(IL2CPP) (ARMv7+ARM64)</span></span></span>
+      <span class="dl-action" style="color:#666">Building…</span>
+    </span>
+    <!-- Obtainium keeps the APK updated in place. Deliberately not version-pinned: it points at
+         the repo and resolves the newest release itself, so this row does not need editing on a
+         release the way the five above do. The config filters to the IL2CPP APK, because every
+         release carries two and Obtainium would otherwise have to ask on each update. -->
+    <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%257B%2522id%2522%253A%2522com.rovio.ABUPPlus%2522%252C%2522url%2522%253A%2522https%253A%252F%252Fgithub.com%252FCyberillcButSmarter%252Fcyberillc-decomp-world%2522%252C%2522author%2522%253A%2522CyberillcButSmarter%2522%252C%2522name%2522%253A%2522ABUP%2520Plus%2522%252C%2522additionalSettings%2522%253A%2522%257B%255C%2522apkFilterRegEx%255C%2522%253A%255C%2522IL2CPP%255C%2522%252C%255C%2522invertAPKFilter%255C%2522%253Afalse%252C%255C%2522about%255C%2522%253A%255C%2522Angry%2520Birds%2520Under%2520Pigstruction%2520Plus%2520-%2520a%2520fan%2520mod%2520of%2520Angry%2520Birds%25202%252C%2520with%2520cloud%2520saves%2520through%2520Re-Achieve.%255C%2522%257D%2522%257D" class="dl-row" rel="noopener">
+      <span class="dl-platform"><img src="assets/img/icons/android.png" class="os-icon" alt="Android"><span class="dl-platform-label">Add to Obtainium<span>(auto-updates, IL2CPP)</span></span></span>
+      <span class="dl-action">Add →</span>
+    </a>
+  </div>
+</div>
+
+      <div class="card-tab-panel" id="dl-archive">
+        <p style="font-size:0.75rem; color:#666; margin-bottom:0.6rem;">v1.1.2.1</p>
+        <div class="dl-list">
     <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.1.2.1/ABUP.Plus.1.1.2.1.Windows.x86_64.zip" class="dl-row">
       <span class="dl-platform"><img src="assets/img/icons/windows.png" class="os-icon" alt="Windows"> Windows <span style="font-size:0.7rem;color:#666;">(x86_64)</span></span>
       <span class="dl-action">Download →</span>
@@ -79,18 +113,7 @@
       <span class="dl-platform"><img src="assets/img/icons/android.png" class="os-icon" alt="Android"><span class="dl-platform-label">Android<span>(IL2CPP) (ARMv7+ARM64)</span></span></span>
       <span class="dl-action">Download →</span>
     </a>
-    <!-- Obtainium keeps the APK updated in place. Deliberately not version-pinned: it points at
-         the repo and resolves the newest release itself, so this row does not need editing on a
-         release the way the five above do. The config filters to the IL2CPP APK, because every
-         release carries two and Obtainium would otherwise have to ask on each update. -->
-    <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%257B%2522id%2522%253A%2522com.rovio.ABUPPlus%2522%252C%2522url%2522%253A%2522https%253A%252F%252Fgithub.com%252FCyberillcButSmarter%252Fcyberillc-decomp-world%2522%252C%2522author%2522%253A%2522CyberillcButSmarter%2522%252C%2522name%2522%253A%2522ABUP%2520Plus%2522%252C%2522additionalSettings%2522%253A%2522%257B%255C%2522apkFilterRegEx%255C%2522%253A%255C%2522IL2CPP%255C%2522%252C%255C%2522invertAPKFilter%255C%2522%253Afalse%252C%255C%2522about%255C%2522%253A%255C%2522Angry%2520Birds%2520Under%2520Pigstruction%2520Plus%2520-%2520a%2520fan%2520mod%2520of%2520Angry%2520Birds%25202%252C%2520with%2520cloud%2520saves%2520through%2520Re-Achieve.%255C%2522%257D%2522%257D" class="dl-row" rel="noopener">
-      <span class="dl-platform"><img src="assets/img/icons/android.png" class="os-icon" alt="Android"><span class="dl-platform-label">Add to Obtainium<span>(auto-updates, IL2CPP)</span></span></span>
-      <span class="dl-action">Add →</span>
-    </a>
-  </div>
-</div>
-
-      <div class="card-tab-panel" id="dl-archive">
+        </div>
         <p style="font-size:0.75rem; color:#666; margin-bottom:0.6rem;">v1.1.2</p>
         <div class="dl-list">
           <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.1.2/ABUP.Plus.1.1.2.Windows.x86_64.zip" class="dl-row">
@@ -299,6 +322,18 @@
 
     <div class="game-detail-section">
       <h2>Changelog</h2>
+
+      <div class="changelog-entry">
+  <div class="changelog-version">v1.1.3</div>
+  <div class="changelog-date">September 18, 2026</div>
+  <ul>
+    <li><strong>A warning before a save is replaced</strong> — backing up or restoring over a save that holds progress the other one lacks now opens a comparison screen first, showing both side by side: level, stars, levels done, pigs, gems, birds, spells and arena league. When neither is ahead, nothing changes.</li>
+    <li><strong>Auto Save</strong> — the game already synced with the cloud by itself; now it says so, and says when it failed. A switch on the account screen turns it off, leaving Back Up and Restore as the only things that touch your cloud save.</li>
+    <li><strong>Undo a bad backup</strong> — every backup keeps the save it replaced, and Re-Achieve's dashboard can put it back.</li>
+    <li><strong>Fixed being signed out by a server outage</strong> — only a genuine refusal clears your session now. If it really did expire, the account screen says so.</li>
+    <li><strong>Fixed a failed cloud upload</strong> being recorded as a successful one.</li>
+  </ul>
+</div>
 
       <div class="changelog-entry">
   <div class="changelog-version">v1.1.2.1</div>
