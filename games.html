@@ -103,17 +103,13 @@
                 <span class="dl-platform"><img src="assets/img/icons/android.png" class="os-icon" alt="Android"><span class="dl-platform-label">Android<span>(IL2CPP) (ARMv7+ARM64)</span></span></span>
                 <span class="dl-action">Download →</span>
               </a>
-    <!-- Obtainium keeps the APK updated in place. Deliberately not version-pinned: it points at
-         the repo and resolves the newest release itself, so this row does not need editing on a
-         release the way the five above do. The config filters to the IL2CPP APK, because every
-         release carries two and Obtainium would otherwise have to ask on each update. -->
-    <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium%3A%2F%2Fapp%2F%257B%2522id%2522%253A%2522com.rovio.ABUPPlus%2522%252C%2522url%2522%253A%2522https%253A%252F%252Fgithub.com%252FCyberillcButSmarter%252Fcyberillc-decomp-world%2522%252C%2522author%2522%253A%2522CyberillcButSmarter%2522%252C%2522name%2522%253A%2522ABUP%2520Plus%2522%252C%2522additionalSettings%2522%253A%2522%257B%255C%2522apkFilterRegEx%255C%2522%253A%255C%2522IL2CPP%255C%2522%252C%255C%2522invertAPKFilter%255C%2522%253Afalse%252C%255C%2522about%255C%2522%253A%255C%2522Angry%2520Birds%2520Under%2520Pigstruction%2520Plus%2520-%2520a%2520fan%2520mod%2520of%2520Angry%2520Birds%25202%252C%2520with%2520cloud%2520saves%2520through%2520Re-Achieve.%255C%2522%257D%2522%257D" class="dl-row" rel="noopener">
-      <span class="dl-platform"><img src="assets/img/icons/android.png" class="os-icon" alt="Android"><span class="dl-platform-label">Add to Obtainium<span>(auto-updates, IL2CPP)</span></span></span>
-      <span class="dl-action">Add →</span>
-    </a>
             </div>
-          </div>
-            <p style="font-size:0.7rem; color:#666; margin-bottom:0.6rem;">v1.1.0</p>
+                        <button type="button" class="dl-more" aria-expanded="false" aria-controls="abup-archive-rest">
+              <span class="dl-more-text">Show 7 older releases</span>
+              <span class="dl-more-chevron" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="dl-archive-rest is-collapsed" id="abup-archive-rest">
+<p style="font-size:0.7rem; color:#666; margin-bottom:0.6rem;">v1.1.0</p>
             <div class="dl-list">
               <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.1.0/ABUP.Plus.1.1.0.Windows.x86_64.zip" class="dl-row">
                 <span class="dl-platform"><img src="assets/img/icons/windows.png" class="os-icon" alt="Windows"> Windows <span style="font-size:0.7rem;color:#666;">(x86_64)</span></span>
@@ -270,7 +266,9 @@
               </a>
             </div>
           </div>
-        </div>
+        
+            </div>
+</div>
       </div>
     </div>
     <div class="game-card">
@@ -310,6 +308,19 @@
   </footer>
 
   <script>
+
+    // Older releases: collapsed until asked for. The button carries its own state through
+    // aria-expanded, so the chevron, the label and assistive tech never disagree.
+    document.querySelectorAll('.dl-more').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = document.getElementById(btn.getAttribute('aria-controls'));
+        if (!group) return;
+        const open = group.classList.toggle('is-collapsed') === false;
+        btn.setAttribute('aria-expanded', String(open));
+        const label = btn.querySelector('.dl-more-text');
+        if (label) label.textContent = label.textContent.replace(open ? 'Show' : 'Hide', open ? 'Hide' : 'Show');
+      });
+    });
     document.querySelectorAll('.card-tab').forEach(btn => {
       btn.addEventListener('click', () => {
         const card = btn.closest('.game-card-body');

@@ -114,7 +114,12 @@
       <span class="dl-action">Download →</span>
     </a>
         </div>
-        <p style="font-size:0.75rem; color:#666; margin-bottom:0.6rem;">v1.1.2</p>
+                <button type="button" class="dl-more" aria-expanded="false" aria-controls="dl-archive-rest">
+          <span class="dl-more-text">Show 9 older releases</span>
+          <span class="dl-more-chevron" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="dl-archive-rest is-collapsed" id="dl-archive-rest">
+<p style="font-size:0.75rem; color:#666; margin-bottom:0.6rem;">v1.1.2</p>
         <div class="dl-list">
           <a href="https://github.com/CyberillcButSmarter/cyberillc-decomp-world/releases/download/1.1.2/ABUP.Plus.1.1.2.Windows.x86_64.zip" class="dl-row">
             <span class="dl-platform"><img src="assets/img/icons/windows.png" class="os-icon" alt="Windows"> Windows <span style="font-size:0.7rem;color:#666;">(x86_64)</span></span>
@@ -317,7 +322,9 @@
             <span class="dl-action">Download →</span>
           </a>
         </div>
-      </div>
+      
+        </div>
+</div>
     </div>
 
     <div class="game-detail-section">
@@ -456,6 +463,19 @@
   </footer>
 
   <script>
+
+    // Older releases: collapsed until asked for. The button carries its own state through
+    // aria-expanded, so the chevron, the label and assistive tech never disagree.
+    document.querySelectorAll('.dl-more').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = document.getElementById(btn.getAttribute('aria-controls'));
+        if (!group) return;
+        const open = group.classList.toggle('is-collapsed') === false;
+        btn.setAttribute('aria-expanded', String(open));
+        const label = btn.querySelector('.dl-more-text');
+        if (label) label.textContent = label.textContent.replace(open ? 'Show' : 'Hide', open ? 'Hide' : 'Show');
+      });
+    });
     // Tabs
     document.querySelectorAll('.card-tab').forEach(btn => {
       btn.addEventListener('click', () => {
